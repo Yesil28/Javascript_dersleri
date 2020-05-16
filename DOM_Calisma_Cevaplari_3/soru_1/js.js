@@ -1,19 +1,33 @@
-const mail = document.querySelectorAll(".form-control")[0];
 
-const sifre = document.querySelectorAll(".form-control")[1];
+var sifre = document.getElementsByClassName("form-control")[1];
+var mail = document.getElementsByClassName("form-control")[0];
 
 
-const form = document.getElementById("form");
-let a;
-var etiket_ac;
-function tikla(){
-    let a;
+
+var form1 = document.getElementById("form1");
+var form2 = document.getElementById("form2");
+
+function tikla() {
     var etiket_ac;
-    if(mail == ""){
-        a = form.children[5];
-        etiket_ac=document.createElement("span");
+    let a;
+
+    if(mail.){
+
+    }
+    
+
+
+    if (mail.value == "" || sifre.value == "") {
+
+        a = form1.children[1];
+        etiket_ac = document.createElement("span");
         etiket_ac.id = "hata";
         etiket_ac.appendChild(document.createTextNode("boş bırakılmaz"));
         a.appendChild(etiket_ac);
     }
+    else {
+        form2.open
+    }
+
 }
+
