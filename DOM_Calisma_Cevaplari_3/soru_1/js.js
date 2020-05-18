@@ -1,13 +1,27 @@
 
 var sifre = document.getElementById("sifre");
 var mail = document.getElementById("mail");
+var mail_deger = document.getElementsByClassName("form-control")[0];
+var sifre_deger = document.getElementsByClassName("form-control")[1];
 
 var buton = document.getElementById("buton");
 
+
+
+
+
 function tikla() {
+
+
+
+    
 
     mail.textContent="İl";
     sifre.textContent = "ilçe";
+
+    sifre_deger.remove();
+    mail_deger.remove();
+
 
 
     var x = "Mahalle";
@@ -18,6 +32,7 @@ function tikla() {
 
 
 
+
     var abc=document.createElement("input");
             
     abc.setAttribute("type","text");
@@ -25,6 +40,34 @@ function tikla() {
     
     var panelDivv=document.getElementById("y");
     panelDivv.appendChild(abc);
+
+
+
+
+
+    var il_text=document.createElement("input");
+            
+    il_text.setAttribute("type","text");
+    il_text.setAttribute("class","form-control");
+    
+    var il_textt=document.getElementById("yeni_text");
+    il_textt.appendChild(il_text);
+
+
+        
+
+    var ilce_text=document.createElement("input");
+            
+    ilce_text.setAttribute("type","text");
+    ilce_text.setAttribute("class","form-control");
+    
+    var ilce_textt=document.getElementById("yeni_text_ilce");
+    ilce_textt.appendChild(ilce_text);
+
+
+
+
+
 
 
 
@@ -40,7 +83,7 @@ function tikla() {
 
 
 
-
+//YENİ BUTON
     var butonn=document.createElement("input");
             
     butonn.setAttribute("type","button");
@@ -49,8 +92,10 @@ function tikla() {
     butonn.setAttribute("value","İlet");
 
     
-    var butonnn=document.getElementById("panel");
+    var butonnn=document.getElementById("yeni_buton");
     butonnn.appendChild(butonn);
+
+
 
 
     const yeni_butonn = document.querySelector("#yeni_buton");
@@ -58,9 +103,5 @@ function tikla() {
     yeni_butonn.addEventListener("click",run);
 
 
-    
-    function run(e){
-        alert("iletildi");
-    }
 }
 
