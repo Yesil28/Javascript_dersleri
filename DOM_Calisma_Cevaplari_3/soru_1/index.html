@@ -17,7 +17,7 @@
 
 
   <form id="form1">
-    <h3 style="text-align: center;">ADIM 1</h3>
+      <h1 style="text-align: center;">Kayıt Formu</h1>
     <div class="container">
       <div class="row">
 
@@ -25,43 +25,38 @@
 
           <div class="form-group">
 
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-
+            <label id="mail" for="exampleInputEmail1">Email address</label>
+            <input type="text" class="form-control">
+             <p id="demo"></p>
+             <div id ="panel"></div> 
           </div>
         </div>
+      
 
         <div class="col-md-6">
           <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
+            <label id="sifre" for="exampleInputPassword1">Password</label>
+            <input type="text" class="form-control">
+
+           <p id="x"></p>
+          <div id ="y"></div>
+       
           </div>
+            
+       
+ 
+         
+
+         
         </div>
       </div>
-      <button onclick="tikla()" type="button" class="btn btn-primary w-100">Submit</button>
+      <button id="buton" onclick="tikla()" type="button" class="btn btn-primary w-50 mt-4">İleri</button>
 
     </div>
 
   </form>
 
-  <form id="form2">
-    <h3 style="text-align: center;">ADIM 2</h3>
-    <div class="container">
-      <form>
-        <div class="row">
-          <div class="col">
-            <input type="text" class="form-control" placeholder="First name">
-          </div>
-          <div class="col">
-            <input type="text" class="form-control" placeholder="Last name">
-          </div>
-        </div>
-      </form>
-      <button onclick="form2()" type="button" class="btn btn-primary w-100">Submit</button>
 
-    </div>
-
-  </form>
 
 
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
