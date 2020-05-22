@@ -8,27 +8,33 @@ var buton = document.getElementById("buton");
 
 
 
-
-
 function tikla() {
 
 
-
+    if (mail_deger.style.display == "none" && sifre_deger.style.display == "none") {
+            mail_deger.style.display = "";
+        sifre_deger.style.display="";
+          } 
+        else {
+            mail_deger.style.display = "none";
+             sifre_deger.style.display="none";
+          }
     
 
     mail.textContent="İl";
     sifre.textContent = "ilçe";
 
-    sifre_deger.remove();
-    mail_deger.remove();
 
-
+  
 
     var x = "Mahalle";
     document.getElementById("demo").innerHTML = x;
 
     var y = "Cadde";
     document.getElementById("x").innerHTML = y;
+
+
+
 
 
 
@@ -43,8 +49,6 @@ function tikla() {
 
 
 
-
-
     var il_text=document.createElement("input");
             
     il_text.setAttribute("type","text");
@@ -54,7 +58,6 @@ function tikla() {
     il_textt.appendChild(il_text);
 
 
-        
 
     var ilce_text=document.createElement("input");
             
@@ -66,11 +69,6 @@ function tikla() {
 
 
 
-
-
-
-
-
     var nesne=document.createElement("input");
             
     nesne.setAttribute("type","text");
@@ -79,28 +77,35 @@ function tikla() {
     var panelDiv=document.getElementById("panel");
     panelDiv.appendChild(nesne);
 
-    buton.remove();
-
-
-
-//YENİ BUTON
-    var butonn=document.createElement("input");
-            
-    butonn.setAttribute("type","button");
-    butonn.setAttribute("class","btn btn-primary w-100 mt-5");
-    butonn.setAttribute("id","yeni_buton");
-    butonn.setAttribute("value","İlet");
-
-    
-    var butonnn=document.getElementById("yeni_buton");
-    butonnn.appendChild(butonn);
+   
 
 
 
 
-    const yeni_butonn = document.querySelector("#yeni_buton");
+}
 
-    yeni_butonn.addEventListener("click",run);
+const yyyy=document.getElementById("y");
+
+const yeni_textt=document.getElementById("yeni_text");
+
+const yeni_textt_ilce = document.getElementById("yeni_text_ilce");
+
+const panell = document.getElementById("panel");
+
+
+function geritikla(){
+    if (yyyy.style.display == "none" && yeni_textt.style.display == "none" && yeni_textt_ilce.style.display=="none"&& panell.style.display=="none") {
+            yyyy.style.display = "";
+        yeni_textt.style.display="";
+        yeni_textt_ilce.display="";
+        panell.display="";
+          } 
+        else {
+            yeni_textt.style.display = "none";
+             yyyy.style.display="none";
+             yeni_textt_ilce.display="none";
+             panell.display="none";
+          }
 
 
 }
