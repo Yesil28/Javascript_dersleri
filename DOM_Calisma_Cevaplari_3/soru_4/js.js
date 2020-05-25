@@ -1,15 +1,45 @@
+let btnKelimeGonder = document.getElementById("btnKelimeGonder");
+
+let engelliKelimeler = [];
 
 
 
+btnKelimeGonder.addEventListener("click", function (e) {
+    e.preventDefault();
+    let yeniEtiket = document.createElement("div");
+    yeniEtiket.innerHTML = document.getElementById("kelime").value;
+    let satir = document.getElementsByClassName("row");
+    satir[0].children[1].appendChild(yeniEtiket);
 
-function tikla(){
+    var regExKelime = new RegExp(document.getElementById("kelime").value , 'gi');
+    engelliKelimeler.push(regExKelime);
+    
+    
 
-    const metin = document.getElementsByClassName("form-control")[0].value;
-console.log(metin);
+});
 
 
+btnGonder.addEventListener("click", function (e) {
+    e.preventDefault();
+    let yeniEtiket = document.createElement("div");
+    let yorumEtiketi=document.getElementById("yorum");
+    let yorum=yorumEtiketi.value;
+  
 
-var res = metin.replace(/samet/gi, "*****");
- 
-    document.getElementById("demo").innerHTML = res;
-}
+
+   
+    /*Filtreleme İşlemi Başı */
+    for (let index = 0; index < engelliKelimeler.length; index++) {
+       
+        yorum=yorum.replace( engelliKelimeler[index], '***');
+    }
+ /*Filtreleme İşlemi Sonu */
+    yeniEtiket.innerHTML = yorum;
+
+    let satir = document.getElementsByClassName("row");
+
+    satir[0].children[0].appendChild(yeniEtiket);
+    
+
+    
+});

@@ -1,43 +1,73 @@
-const buton = document.getElementById("buton");
+// let ileriButonu=document.getElementById("ileri_butonu");
+// let geriButonu=document.getElementById("geri_butonu");
+// let kaydetButonu=document.getElementById("kaydet_butonu");
+let adimBir=document.getElementById("adim_1");
+let adimIki=document.getElementById("adim_2");
+
+// ileriButonu.addEventListener("click",function(e){
+//     adimBir.style.display="none";
+//     adimIki.style.display="block";
+
+//     e.preventDefault();
+// });
+
+// geriButonu.addEventListener("click",function(e){
+//     adimBir.style.display="block";
+//     adimIki.style.display="none";
+//     e.preventDefault();
+// });
+
+// kaydetButonu.addEventListener("click",function(e){
+//     adimBir.style.display="none";
+//     adimIki.style.display="none";
+//     alert("Formunuz gönderilmiştir.");
+//     e.preventDefault();
+// });
 
 
-function tikla(e){
+
+var takimOylari=[10,5,2];
+btnGonder.addEventListener("click",function(e){
+
+    const rdBtn=document.querySelectorAll(".form-check-input");
+
+    const rdBtnDizi=Array.from(rdBtn);
+
+    rdBtnDizi.forEach(function(item){
+
+        if(item.checked==true)
+        {
+            if(item.value=="gs")
+            {
+                takimOylari[0]++;
+            }
+            else if(item.value=="fb")
+            {
+                takimOylari[1]++;
+            }
+            else if(item.value=="bjk")
+            {
+                takimOylari[2]++;
+            }
+        }
+
+    });
+
+    var toplamOy=takimOylari[0]+takimOylari[1]+takimOylari[2];
 
 
-    var abc=document.createElement("progress");
-            
-    abc.setAttribute("role","progressbar");
-    abc.setAttribute("class","progress-bar");
-    abc.setAttribute("aria-valuenow","25");
-    abc.setAttribute("aria-valuemin","0");
-    abc.setAttribute("style","width: 25%");
-    abc.setAttribute("aria-valuemax","100");
-    
-    var x = "%25";
-    document.getElementById("x").innerHTML = x;
-    
-    var panelDivv=document.getElementById("p1");
-    panelDivv.appendChild(abc);
+    const proBar=document.querySelectorAll(".progress-bar");
 
+    for (let index = 0; index < proBar.length; index++) {
+      
+        //proBar[index].value=(takimOylari[index]*100)/toplamOy;
+        proBar[index].setAttribute("aria-valuenow",(takimOylari[index]*100)/toplamOy);
+        proBar[index].style.width=String((takimOylari[index]*100)/toplamOy) + '%';
+        proBar[index].textContent+=" % " + String((takimOylari[index]*100)/toplamOy); 
 
+    }
 
-
-
-    
-    var abcc=document.createElement("progress");
-            
-    abcc.setAttribute("role","progressbar");
-    abcc.setAttribute("class","progress-bar");
-    abcc.setAttribute("aria-valuenow","75");
-    abcc.setAttribute("aria-valuemin","0");
-    abcc.setAttribute("style","width: 75%");
-    abcc.setAttribute("aria-valuemax","100");
-    
-    var y = "%75";
-    document.getElementById("y").innerHTML = y;
-    
-    var panelDivvv=document.getElementById("p2");
-    panelDivvv.appendChild(abcc);
-    
-    buton.remove();
-}
+    adimBir.style.display="none";
+    adimIki.style.display="block";
+    e.preventDefault();
+});
